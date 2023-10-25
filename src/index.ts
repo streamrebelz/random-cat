@@ -27,6 +27,14 @@ export interface Env {
 
 export default {
 	async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
-		return new Response('Hello World!');
+		// https://thesecatsdonotexist.com/
+
+		// random number between 4 and 6
+		const randomDirectory = `0${Math.floor(Math.random() * 3) + 4}`;
+		const randomCat = `cat${Math.floor(Math.random() * 5000 + 1)}.jpg`;
+
+		const url = `https://d2ph5fj80uercy.cloudfront.net/${randomDirectory}/${randomCat}`;
+
+		return Response.redirect(url, 301);
 	},
 };
