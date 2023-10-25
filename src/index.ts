@@ -35,6 +35,6 @@ export default {
 
 		const url = `https://d2ph5fj80uercy.cloudfront.net/${randomDirectory}/${randomCat}`;
 
-		return Response.redirect(url, 301);
+		return Response.redirect(url);
 	},
 };
